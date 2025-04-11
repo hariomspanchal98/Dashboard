@@ -11,6 +11,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     SidebarComponent,
     UpdateUserComponent,
-    FooterComponent
+    FooterComponent,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,

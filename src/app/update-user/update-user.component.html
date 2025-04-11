@@ -1,18 +1,33 @@
 <div class="popup-backdrop">
   <div class="popup-content">
-    <h3>Edit Row</h3>
-    <label>
-      Name:
-      <input  />
-    </label>
-    <label>
-      Age:
-      <input type="number"  />
-    </label>
-    <!-- Add other fields as needed -->
+    <h3>{{ selectedUser.name.first_name }} {{ selectedUser.name.last_name }}</h3>
+
+    <div class="popup-field">
+      <label>Handle:</label>
+      <p>{{ selectedUser.name.handle }}</p>
+    </div>
+
+    <div class="popup-field">
+      <label>Email:</label>
+      <p>{{ selectedUser.email }}</p>
+    </div>
+
+    <div class="popup-field">
+      <label>Role:</label>
+      <p>{{ selectedUser.role }}</p>
+    </div>
+
+    <div class="popup-field">
+      <label>Teams:</label>
+      <div class="team-badges">
+        <ng-container *ngFor="let team of selectedUser.teams">
+          <span class="badge" [ngClass]="team.value.toLowerCase()">{{ team.value }}</span>
+        </ng-container>
+      </div>
+    </div>
+
     <div class="popup-actions">
-      <button (click)="saveChanges()">Save</button>
-      <button (click)="cancel()">Cancel</button>
+      <button class="cancel-btn" (click)="cancel()">Close</button>
     </div>
   </div>
 </div>

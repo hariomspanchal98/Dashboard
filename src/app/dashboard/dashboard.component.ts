@@ -7,8 +7,9 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  showPopup = false;
-  selectedRow: any;
+  showUser = false;
+  deleteUserPopup = false;
+  selectedUser: any;
   users: any = [];
   columnHeaders: any = [];
   masterSelected: boolean = false;
@@ -45,15 +46,30 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  openPopup(row: any) {
-    this.selectedRow = row;
-    this.showPopup = true;
-    console.log('open');
+  openUserPopup(user: any) {
+    this.selectedUser = user;
+    this.showUser = true;
   }
 
-  closePopup() {
-    this.showPopup = false;
-    this.selectedRow = null;
-    console.log('close');
+  closeUserPopup() {
+    this.showUser = false;
+    this.selectedUser = null;
+  }
+
+  openDeletePopup(user: any) {
+    this.selectedUser = user;
+    this.deleteUserPopup = true;
+  }
+
+  closeDeletePopup() {
+    this.deleteUserPopup = false;
+    this.selectedUser = null;
+    console.log('after', this.selectedUser);
+  }
+
+  deleteUser() {
+    this.users = this.users.filter((user: any) => user.id !== this.selectedUser.id);
+    console.log('before', this.selectedUser);
+    this.closeDeletePopup();
   }
 }
