@@ -10,7 +10,7 @@
 .dashboard-container {
   flex: 1;
   padding: 24px;
-  overflow: auto;
+  overflow: none;
 }
 
 // Header
@@ -110,7 +110,6 @@
   padding: 20px;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-
   .section-header {
     display: flex;
     justify-content: space-between;
@@ -138,10 +137,49 @@
 
     thead th {
       color: #6b7280;
+
+      .checkbox-column {
+        width: 40px;
+        text-align: center;
+        vertical-align: middle;
+
+        input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+          margin: auto;
+          display: block;
+        }
+      }
     }
 
     tbody tr {
       border-top: 1px solid #e5e7eb;
+
+      td .checkbox-column {
+        width: 40px;
+        text-align: center;
+        vertical-align: middle;
+
+        input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+          margin: auto;
+          display: block;
+        }
+      }
+
+      td .icon {
+        display: inline-block;
+        margin-right: 12px;
+        cursor: pointer;
+        vertical-align: middle;
+      }
+
+      td .icon:last-child {
+        margin-right: 0;
+      }
 
       &:hover {
         background-color: #f9fafb;
@@ -184,16 +222,34 @@
         }
       }
 
-      .progress-bar {
-        background-color: #e5e7eb;
-        height: 8px;
-        border-radius: 6px;
-        overflow: hidden;
+      .progress-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 6px 0;
+      }
 
-        div {
-          background-color: #7c3aed;
-          height: 100%;
-        }
+      .progress-bar {
+        flex: 1;
+        height: 8px;
+        background-color: #e5e7eb; // light gray
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background-color: #8b5cf6; // violet
+        border-radius: 9999px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .progress-text {
+        font-size: 14px;
+        color: #4b5563; // dark gray
+        min-width: 32px;
+        text-align: right;
       }
 
       .badge {
@@ -204,6 +260,26 @@
         border-radius: 8px;
         margin-right: 4px;
         display: inline-block;
+      }
+
+      .product {
+        color: #2C5BCC;
+        background-color: #F1F8FE
+      }
+
+      .testing {
+        color: #FFB21A;
+        background-color: #FBF2E1
+      }
+
+      .design {
+        color: #886FCE;
+        background-color: #F8F5FE
+      }
+
+      .marketing {
+        color: #494DCB;
+        background-color: #EFF4FE
       }
 
       .icon {

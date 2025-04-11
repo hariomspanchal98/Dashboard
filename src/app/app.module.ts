@@ -9,20 +9,24 @@ import {MatIconModule} from '@angular/material/icon';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SidebarComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
