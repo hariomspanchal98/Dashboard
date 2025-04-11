@@ -1,0 +1,84 @@
+
+<div class="dashboard-wrapper">
+  <app-sidebar></app-sidebar>
+
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <h2>Welcome back, Olivia</h2>
+      <div>
+        <button class="btn">Customize</button>
+        <button class="btn">Export</button>
+      </div>
+    </div>
+
+    <div class="dashboard-top">
+      <div class="card vendor-breakdown">
+        <h3>Vendor breakdown</h3>
+        <p>Keep track of vendors and their security ratings.</p>
+        <canvas id="vendorChart"></canvas>
+        <button class="link-btn">View full report</button>
+      </div>
+
+      <div class="card vendors-monitored">
+        <h3>Vendors monitored</h3>
+        <div class="progress-circle">
+          <div class="value">240</div>
+        </div>
+        <p class="subtext">You're using 80% of available spots.</p>
+        <p class="subtext">You've almost reached your limit</p>
+        <button class="upgrade-btn">Upgrade plan</button>
+      </div>
+    </div>
+
+    <div class="team-members">
+      <div class="section-header">
+        <h3>Team members</h3>
+        <span class="tag">100 users</span>
+      </div>
+
+      <table class="team-table">
+        <thead>
+          <tr>
+            <th><input type="checkbox" /></th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Role</th>
+            <th>Email address</th>
+            <th>Teams</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>
+              <div class="user-info">
+                <img src="https://avatar.iran.liara.run/public/27" />
+                <div>
+                  <div class="name">Olivia Rhye</div>
+                  <div class="handle">@olivia</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="status customer">Customer</span></td>
+            <td>Product Designer</td>
+            <td>
+              <div class="progress-bar"><div style="width: 70%"></div></div>
+            </td>
+            <td>
+              <span class="badge" style="color: #4f4615;">Design</span>
+              <span class="badge">Product</span>
+              <span class="badge">Marketing</span>
+            </td>
+            <td><span class="icon" (click)="openPopup('row')">✏️</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+<app-update-user
+  *ngIf="showPopup"
+  [rowData]="selectedRow"
+  (close)="closePopup()">
+</app-update-user>
