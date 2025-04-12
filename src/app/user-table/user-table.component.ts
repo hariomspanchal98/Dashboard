@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
+import { TableColumn } from '../user-data';
 
 @Component({
   selector: 'app-user-table',
@@ -9,10 +10,10 @@ import { DashboardService } from '../dashboard.service';
 export class UserTableComponent implements OnInit {
   showUser = false;
   deleteUserPopup = false;
-  selectedUser: any;
+  selectedUser!: any;
   users: any = [];
-  columnHeaders: any = [];
-  masterSelected: boolean = false;
+  columnHeaders: TableColumn[] = [];
+  masterSelected = false;
 
   constructor(private dashboardService: DashboardService) { }
 
@@ -68,7 +69,7 @@ export class UserTableComponent implements OnInit {
   }
 
   deleteUser() {
-    this.users = this.users.filter((user: any) => user.id !== this.selectedUser.id);
+    this.users = this.users.filter((user: any) => user.id !== this.selectedUser?.id);
     console.log('before', this.selectedUser);
     this.closeDeletePopup();
   }

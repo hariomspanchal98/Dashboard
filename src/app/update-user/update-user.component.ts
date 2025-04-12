@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class UpdateUserComponent {
   @Input() selectedUser: any;
-  @Output() close = new EventEmitter<void>();
+  @Output() closePopup = new EventEmitter<void>();
 
 
   cancel() {
-    console.log(this.close);
-    this.close.emit();
+    console.log(this.selectedUser);
+    this.closePopup.emit();
   }
 }

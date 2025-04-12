@@ -7,12 +7,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class DeleteUserComponent {
   @Input() selectedUser: any;
-  @Output() close = new EventEmitter<void>();
+  @Output() closePopup = new EventEmitter<void>();
   @Output() delete = new EventEmitter<void>();
 
   cancel() {
-    console.log(this.close);
-    this.close.emit();
+    console.log(this.closePopup);
+    this.closePopup.emit();
   }
 
   deleteUser() {
