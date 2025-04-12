@@ -1,0 +1,33 @@
+<div class="popup-backdrop">
+  <div class="popup-content">
+    <h3>{{ selectedUser.name.first_name }} {{ selectedUser.name.last_name }}</h3>
+
+    <div class="popup-field">
+      <span>Handle:</span>
+      <p>{{ selectedUser.name.handle }}</p>
+    </div>
+
+    <div class="popup-field">
+      <span>Email:</span>
+      <p>{{ selectedUser.email }}</p>
+    </div>
+
+    <div class="popup-field">
+      <span>Role:</span>
+      <p>{{ selectedUser.role }}</p>
+    </div>
+
+    <div class="popup-field">
+      <span>Teams:</span>
+      <div class="team-badges">
+        <ng-container *ngFor="let team of selectedUser.teams">
+          <span class="badge" [ngClass]="team.value.toLowerCase()">{{ team.value }}</span>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="popup-actions">
+      <button class="cancel-btn" (click)="cancel()">Close</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+// Main container
+.dashboard-container {
+  flex: 1;
+  padding: 24px;
+  overflow: none;
+}
