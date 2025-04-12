@@ -1,18 +1,62 @@
-<div class="dashboard-top">
-  <div class="card vendor-breakdown">
-    <h3>Vendor breakdown</h3>
-    <p>Keep track of vendors and their security ratings.</p>
-    <canvas id="vendorChart"></canvas>
-    <button class="link-btn">View full report</button>
+<div class="dashboard">
+  <!-- Left Card: Vendor Breakdown -->
+  <div class="card vendor-card">
+    <div class="header">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#1f1f1f"><path d="M440-91 160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11Zm0-366v274l40 23 40-23v-274l240-139v-42l-43-25-237 137-237-137-43 25v42l240 139Z"/></svg>
+      </span>
+      <div>
+        <h3>Vendor breakdown</h3>
+        <p>Keep track of vendors and their security ratings.</p>
+      </div>
+      <span class="moreTag"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+        fill="#1f1f1f">
+        <path
+          d="M480-189.23q-24.75 0-42.37-17.63Q420-224.48 420-249.23q0-24.75 17.63-42.38 17.62-17.62 42.37-17.62 24.75 0 42.37 17.62Q540-273.98 540-249.23q0 24.75-17.63 42.37-17.62 17.63-42.37 17.63ZM480-420q-24.75 0-42.37-17.63Q420-455.25 420-480q0-24.75 17.63-42.37Q455.25-540 480-540q24.75 0 42.37 17.63Q540-504.75 540-480q0 24.75-17.63 42.37Q504.75-420 480-420Zm0-230.77q-24.75 0-42.37-17.62Q420-686.02 420-710.77q0-24.75 17.63-42.37 17.62-17.63 42.37-17.63 24.75 0 42.37 17.63Q540-735.52 540-710.77q0 24.75-17.63 42.38-17.62 17.62-42.37 17.62Z" />
+      </svg></span>
+    </div>
+
+    <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'250px'}"></canvasjs-chart>
+
+    <div class="footer">
+      <button class="btn-secondary">View full report</button>
+    </div>
   </div>
 
-  <div class="card vendors-monitored">
-    <h3>Vendors monitored</h3>
-    <div class="progress-circle">
-      <div class="value">240</div>
+  <!-- Right Card: Vendors Monitored -->
+  <div class="card monitor-card">
+    <div class="header">
+      <div class="text-content">
+        <h3>Vendors monitored</h3>
+        <p>You’re using 80% of available spots.</p>
+      </div>
+      <span class="moreTag">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+          <path
+            d="M480-189.23q-24.75 0-42.37-17.63Q420-224.48 420-249.23q0-24.75 17.63-42.38 17.62-17.62 42.37-17.62 24.75 0 42.37 17.62Q540-273.98 540-249.23q0 24.75-17.63 42.37-17.62 17.63-42.37 17.63ZM480-420q-24.75 0-42.37-17.63Q420-455.25 420-480q0-24.75 17.63-42.37Q455.25-540 480-540q24.75 0 42.37 17.63Q540-504.75 540-480q0 24.75-17.63 42.37Q504.75-420 480-420Zm0-230.77q-24.75 0-42.37-17.62Q420-686.02 420-710.77q0-24.75 17.63-42.37 17.62-17.63 42.37-17.63 24.75 0 42.37 17.63Q540-735.52 540-710.77q0 24.75-17.63 42.38-17.62 17.62-42.37 17.62Z" />
+        </svg>
+      </span>
     </div>
-    <p class="subtext">You're using 80% of available spots.</p>
-    <p class="subtext">You've almost reached your limit</p>
-    <button class="upgrade-btn">Upgrade plan</button>
+
+    <div class="gauge-container">
+      <canvas id="gaugeChart" width="120" height="60"></canvas>
+      <div class="gauge-value">240</div>
+      <div class="gauge-growth">↑ 10%</div>
+    </div>
+
+    <div class="gauge-footer">
+      <strong>You’ve almost reached your limit</strong>
+      <p>You have used 80% of your available spots.<br />Upgrade plan to monitor more vendors.</p>
+    </div>
+
+    <div class="button-wrapper">
+      <button class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="12px" fill="#1f1f1f">
+          <path
+            d="m422-232 207-248H469l29-227-185 267h139l-30 208ZM320-80l40-280H160l360-520h80l-40 320h240L400-80h-80Zm151-390Z" />
+        </svg>
+        Upgrade plan
+      </button>
+    </div>
   </div>
 </div>

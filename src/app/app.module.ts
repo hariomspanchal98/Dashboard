@@ -14,6 +14,7 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { VendorChartComponent } from './vendor-chart/vendor-chart.component';
 import { UserTableComponent } from './user-table/user-table.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserTableComponent } from './user-table/user-table.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CanvasJSAngularChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
