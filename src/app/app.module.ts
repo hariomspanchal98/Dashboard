@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
@@ -28,15 +28,11 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     VendorChartComponent,
     UserTableComponent
   ],
-  imports: [
-    BrowserModule,
+  bootstrap: [AppComponent],
+  imports: [BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     FormsModule,
-    CanvasJSAngularChartsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    CanvasJSAngularChartsModule], providers: [provideHttpClient(withInterceptorsFromDi())]
 })
 export class AppModule { }
