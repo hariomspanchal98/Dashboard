@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { VendorChartComponent } from './vendor-chart/vendor-chart.component';
+import { UserTableComponent } from './user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     SidebarComponent,
     UpdateUserComponent,
     FooterComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    NavbarComponent,
+    VendorChartComponent,
+    UserTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatIconModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule
