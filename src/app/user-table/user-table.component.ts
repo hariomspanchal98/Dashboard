@@ -26,7 +26,6 @@ export class UserTableComponent implements OnInit {
       this.users = data['grid_data'];
       this.columnHeaders = data['grid_columns'];
       this.getUserProfile();
-      console.log(this.users[0]);
     });
   }
 
@@ -65,12 +64,10 @@ export class UserTableComponent implements OnInit {
   closeDeletePopup() {
     this.deleteUserPopup = false;
     this.selectedUser = null;
-    console.log('after', this.selectedUser);
   }
 
   deleteUser() {
     this.users = this.users.filter((user: any) => user.id !== this.selectedUser?.id);
-    console.log('before', this.selectedUser);
     this.closeDeletePopup();
   }
 }

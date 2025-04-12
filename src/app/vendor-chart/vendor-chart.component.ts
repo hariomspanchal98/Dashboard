@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./vendor-chart.component.scss']
 })
 export class VendorChartComponent {
-  
+
   chartOptions = {
     animationEnabled: true,
     backgroundColor: "#ffffff",

@@ -24,5 +24,5 @@ export interface TableColumn {
   column_key: string;
   column_name: string;
   type: string;
-  align: 'left' | 'right' | 'center'; // assuming alignment options
+  align: 'left' | 'right' | 'center';
 }

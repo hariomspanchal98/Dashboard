@@ -11,7 +11,6 @@ export class UpdateUserComponent {
 
 
   cancel() {
-    console.log(this.selectedUser);
     this.closePopup.emit();
   }
 }

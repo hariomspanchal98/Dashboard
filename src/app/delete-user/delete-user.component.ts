@@ -11,7 +11,6 @@ export class DeleteUserComponent {
   @Output() delete = new EventEmitter<void>();
 
   cancel() {
-    console.log(this.closePopup);
     this.closePopup.emit();
   }
 
