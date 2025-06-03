@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 import { TableColumn } from '../user-data';
+import { USERDATA } from './user-table.constant';
 
 @Component({
   selector: 'app-user-table',
@@ -23,6 +24,9 @@ export class UserTableComponent implements OnInit {
 
   getUsers() {
     this.dashboardService.getUsers().subscribe((data: any) => {
+      if (!data) {
+        data = USERDATA;
+      }
       this.users = data['grid_data'];
       this.columnHeaders = data['grid_columns'];
       this.getUserProfile();
